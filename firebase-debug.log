@@ -1,0 +1,23 @@
+[debug] [2017-11-14T05:38:54.918Z] ----------------------------------------------------------------------
+[debug] [2017-11-14T05:38:54.921Z] Command:       /Users/jaime/.nvm/versions/node/v6.10.0/bin/node /Users/jaime/.nvm/versions/node/v6.10.0/bin/firebase deploy
+[debug] [2017-11-14T05:38:54.921Z] CLI Version:   3.9.2
+[debug] [2017-11-14T05:38:54.921Z] Platform:      darwin
+[debug] [2017-11-14T05:38:54.921Z] Node Version:  v6.10.0
+[debug] [2017-11-14T05:38:54.922Z] Time:          Mon Nov 13 2017 23:38:54 GMT-0600 (CST)
+[debug] [2017-11-14T05:38:54.922Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-14T05:38:54.936Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-14T05:38:54.936Z] > authorizing via signed-in user
+[debug] [2017-11-14T05:38:54.939Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/coronela-5f296  
+ Mon Nov 13 2017 23:38:54 GMT-0600 (CST)
+[debug] [2017-11-14T05:38:55.410Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-14T05:38:55.412Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/coronela-5f296/tokens  
+ Mon Nov 13 2017 23:38:55 GMT-0600 (CST)
+[debug] [2017-11-14T05:38:55.801Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'coronela-5f296'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2017-11-14T05:38:57.009Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/coronela-5f296/uploads/-Kyt1OzcsZ-i_asgcfvU?fileCount=18&message=  
+ Mon Nov 13 2017 23:38:57 GMT-0600 (CST)
