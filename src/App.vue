@@ -13,11 +13,21 @@
 <style>
   body {
     margin: 0;
-    background: #FAFAFA;
+    background: #EFEFEF;
+    font-family: 'Brandon'
+  }
+
+  @font-face {
+    font-family: 'Brandon';
+    src: url('assets/font/Brandon_reg.otf');
+  }
+
+  @font-face {
+    font-family: 'Brandon-Bold';
+    src: url('assets/font/Brandon_bld.otf');
   }
 
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -31,6 +41,6 @@
   }
 
   .VueCarousel-dot-inner {
-    border: 1px solid white;
+    border: 1px solid #888;
   }
 </style>

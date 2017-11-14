@@ -3,9 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
 import VueCarousel from 'vue-carousel'
+import Scrollspy from 'vue2-scrollspy'
+
 Vue.use(VueCarousel)
+Vue.use(Scrollspy)
 
 Vue.config.productionTip = false
 
