@@ -8,7 +8,6 @@
         <span v-bind:class="{active: language === 'spanish'}" v-on:click="language='spanish'"> español &nbsp |</span>
         <span v-bind:class="{active: language === 'english'}" v-on:click="language='english'"> english </span>
       </div>
-
     </div>
 
     <ul class="navbar" v-bind:class="{ scrolled: navbarBackground}">
@@ -71,8 +70,25 @@
       <div class="section menus">
         <h1 v-if="this.language === 'spanish'">· &nbsp Menús &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Menus &nbsp ·</h1>
-        <p v-if="this.language === 'spanish'">Contenido</p>
-        <p v-if="this.language === 'english'">Content</p>
+
+        <div class="row menus" v-if="this.language === 'spanish'">
+          <div class="col col-md-4">
+            <h2>DESAYUNOS</h2>
+            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+          </div>
+          <div class="col col-md-4">
+            <h2>COMIDAS</h2>
+            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+          </div>
+          <div class="col col-md-4">
+            <h2>ESPECIAL DEL DÍA</h2>
+            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+          </div>
+        </div>
+
+        <div v-if="this.language === 'english'">
+
+        </div>
         <hr>
       </div>
 
@@ -143,16 +159,21 @@
   .home {
     width: 100%;
     max-width: 1280px;
-    margin: 8px auto;
-    box-shadow: 0 -1px 4px #888;
+    margin: 0 auto 8px auto;
     background: #FAFAFA;
-    border-radius: 8px;
-    position: relative;
   }
 
-  .header .texture {
+  .texture {
     background-image: url('../assets/header/texture_header.png');
     background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 187px;
+  }
+
+  .header {
     height: 187px;
   }
 
@@ -228,13 +249,18 @@
   }
 
   .section {
-    padding-top: 100px;
+    padding-top: 52px;
   }
 
   h1 {
     text-transform: uppercase;
     font-family: 'Brandon';
     font-size: 16px;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 15px;
   }
 
   p.detail {
@@ -256,6 +282,7 @@
     cursor: pointer;
   }
 
+
   .reservations .button {
     margin: 54px auto;
   }
@@ -263,6 +290,11 @@
   .reservations .button:hover {
     color: white;
     background: #1c449c;
+  }
+
+  .reservations h1 {
+    margin-bottom: 24px;
+    color: #4f4f4f;
   }
 
   .section hr {
@@ -274,11 +306,37 @@
   .watermark {
     position: fixed;
     top: 300px;
-    right: calc(50% - 640px);
+    right: 0;
     width: 168px;
     height: 264px;
     background-image: url('../assets/sello/sello_coronela.png');
     z-index: 200;
   }
 
+  .row {
+    max-width: 607px;
+    margin: 0 auto;
+  }
+
+  .menus h1 {
+    margin-bottom: 12px;
+    color: #4f4f4f;
+  }
+
+  .menus h2 {
+    margin-top: 16px;
+  }
+
+  .menus .col p {
+    padding-left: 32px;
+    padding-right: 32px;
+    line-height: 28px;
+    margin-top: -10px;
+    color: #4f4f4f;
+    font-weight: 200;
+  }
+
+  .menus hr {
+    margin-top: 56px;
+  }
 </style>
