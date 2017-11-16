@@ -95,6 +95,18 @@
       <div class="section location">
         <h1 v-if="this.language === 'spanish'">· &nbsp Ubicación &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Location &nbsp ·</h1>
+
+        <gmap-map
+          :center="{lat:19.436181, lng:-99.155800}"
+          :zoom="16"
+          style="width: 700px; height: 300px; margin: 0 auto"
+          :options="{styles: mapStyles, mapTypeControl: false}"
+        >
+          <gmap-marker
+            :position="{lat:19.436181, lng:-99.155800}"
+            :icon="markerIcon"
+          ></gmap-marker>
+        </gmap-map>
         <p v-if="this.language === 'spanish'">Contenido</p>
         <p v-if="this.language === 'english'">content</p>
         <hr>
@@ -132,7 +144,10 @@
       return {
         language: 'spanish',
         navbarBackground: false,
-        scrollPos: 0
+        scrollPos: 0,
+        //eslint-disable-next-line
+        mapStyles: [{"featureType":"all","stylers":[{"saturation":0},{"hue":"#e7ecf0"}]},{"featureType":"road","stylers":[{"saturation":-70}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"simplified"},{"saturation":-60}]}],
+        markerIcon: '/static/pin.png'
       }
     },
     components: {

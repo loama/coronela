@@ -5,11 +5,18 @@ import App from './App'
 import router from './router'
 import VueCarousel from 'vue-carousel'
 import Scrollspy from 'vue2-scrollspy'
+import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.use(VueCarousel)
 Vue.use(Scrollspy)
 
 Vue.config.productionTip = false
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyCsiKvpv0CHNAvy61WEyG5-LrZK6lOICbw'
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({

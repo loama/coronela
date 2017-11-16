@@ -184,4 +184,8 @@
       max-width: 100%;
     }
   }
+
+  .vue-map-container .vue-map {
+    border-radius: 20px;
+  }
 </style>
