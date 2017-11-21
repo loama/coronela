@@ -27,6 +27,11 @@
     src: url('assets/font/Brandon_bld.otf');
   }
 
+  @font-face {
+    font-family: 'Brandon-Light-Italic';
+    src: url('assets/font/Brandon_thin_it.otf');
+  }
+
   #app {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -119,6 +124,11 @@
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
       max-width: 100%;
+    }
+    .col-md-20p {
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+      max-width: 20%;
     }
   }
 

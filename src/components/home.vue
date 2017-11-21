@@ -10,6 +10,8 @@
       </div>
     </div>
 
+    <hr class="header-line">
+
     <ul class="navbar" v-bind:class="{ scrolled: navbarBackground}">
       <li :class="{active:scrollPos == 0}">
         <a v-if="this.language === 'spanish'" @click="$scrollTo(0)">reservaciones</a>
@@ -87,7 +89,20 @@
         </div>
 
         <div v-if="this.language === 'english'">
-
+          <div class="row menus" v-if="this.language === 'spanish'">
+            <div class="col col-md-4">
+              <h2>BREAKFASTS</h2>
+              <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            </div>
+            <div class="col col-md-4">
+              <h2>MEALS</h2>
+              <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            </div>
+            <div class="col col-md-4">
+              <h2>TODAY SPECIALS</h2>
+              <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            </div>
+          </div>
         </div>
         <hr>
       </div>
@@ -96,37 +111,84 @@
         <h1 v-if="this.language === 'spanish'">· &nbsp Ubicación &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Location &nbsp ·</h1>
 
+        <p class="detail">Valentín Gómez Farías #2, Colonia Tabacalera, Delegación Cuauhtémoc, Ciudad de México, México</p>
+
         <gmap-map
           :center="{lat:19.436181, lng:-99.155800}"
           :zoom="16"
-          style="width: 700px; height: 300px; margin: 0 auto"
+          style="width: 760px; height: 358px; margin: 50px auto"
           :options="{styles: mapStyles, mapTypeControl: false}"
-        >
+          >
           <gmap-marker
             :position="{lat:19.436181, lng:-99.155800}"
             :icon="markerIcon"
           ></gmap-marker>
         </gmap-map>
-        <p v-if="this.language === 'spanish'">Contenido</p>
-        <p v-if="this.language === 'english'">content</p>
+
+        <p v-if="this.language === 'spanish'" class="subdetail">
+          En la Plaza de la República &nbsp&nbsp · &nbsp&nbsp No contamos con valet parking &nbsp&nbsp · &nbsp&nbsp Estacionamientos por la zona </p>
+        </p>
+        <p v-if="this.language === 'english'">
+          En la Plaza de la República &nbsp&nbsp · &nbsp&nbsp No contamos con valet parking &nbsp&nbsp · &nbsp&nbsp Estacionamientos por la zona
+        </p>
         <hr>
       </div>
 
       <div class="section press">
-        <h1>· &nbsp RESERVACIONES &nbsp ·</h1>
-        <p>Content</p>
+        <h1 v-if="this.language === 'spanish'">· &nbsp Prensa &nbsp ·</h1>
+        <h1 v-if="this.language === 'english'">· &nbsp Press &nbsp ·</h1>
+
+        <div class="row" v-if="this.language === 'spanish'">
+          <div class="col col-md-4">
+            <h2>TRIP ADVISOR</h2>
+            <p> - <br> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a." </p>
+          </div>
+          <div class="col col-md-4">
+            <h2>TIME OUT</h2>
+            <p> - <br> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a." </p>
+          </div>
+          <div class="col col-md-4">
+            <h2>HUFFINGTON POST</h2>
+            <p> - <br> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a." </p>
+          </div>
+        </div>
+
+        <hr>
+
+        <h3> KIT DE PRENSA </h3>
+        <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+
+        <div v-if="this.language === 'spanish'" class="button"> descargar </div>
+        <div v-if="this.language === 'english'" class="button"> download </div>
+
         <hr>
       </div>
 
       <div class="section events">
-        <h1>· &nbsp RESERVACIONES &nbsp ·</h1>
-        <p>Content</p>
+        <h1 v-if="this.language === 'spanish'">· &nbsp Eventos &nbsp ·</h1>
+        <h1 v-if="this.language === 'english'">· &nbsp Events &nbsp ·</h1>
+        <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+        <div v-if="this.language === 'spanish'" class="button"> conoce más </div>
+        <div v-if="this.language === 'english'" class="button"> see more </div>
         <hr>
       </div>
 
       <div class="section contact">
-        <h1>· &nbsp RESERVACIONES &nbsp ·</h1>
-        <p>Content</p>
+        <h1 v-if="this.language === 'spanish'">· &nbsp Contacto &nbsp ·</h1>
+        <h1 v-if="this.language === 'english'">· &nbsp Contact &nbsp ·</h1>
+        <div class="row">
+          <div class="col-md-20p">
+            <img src="../assets/contacto/iconos_redes/hover/icono_telefono.svg">
+          </div>
+          <div class="col-md-20p">a</div>
+          <div class="col-md-20p">a</div>
+          <div class="col-md-20p">a</div>
+          <div class="col-md-20p">a</div>
+          <div class="col-md-20p"></div>
+          <div class="col-md-20p">a</div>
+          <div class="col-md-20p">a</div>
+          <div class="col-md-20p">a</div>
+        </div>
         <hr>
       </div>
 
@@ -222,6 +284,11 @@
     font-family: 'Brandon-Bold';
   }
 
+  .header-line {
+    margin: 0;
+    border: 1px solid #1c449c;
+  }
+
   .VueCarousel {
     position: relative;
     z-index: 400;
@@ -271,6 +338,7 @@
     text-transform: uppercase;
     font-family: 'Brandon';
     font-size: 16px;
+    letter-spacing: 1.9px;
   }
 
   h2 {
@@ -295,14 +363,10 @@
     font-size: 15px;
     padding-top: 4px;
     cursor: pointer;
-  }
-
-
-  .reservations .button {
     margin: 54px auto;
   }
 
-  .reservations .button:hover {
+  .button:hover {
     color: white;
     background: #1c449c;
   }
@@ -348,10 +412,33 @@
     line-height: 28px;
     margin-top: -10px;
     color: #4f4f4f;
-    font-weight: 200;
+    font-weight: 300;
+    font-family: 'Brandon-Light-Italic';
   }
 
   .menus hr {
     margin-top: 56px;
   }
+
+  .location .detail {
+    margin-top: 22px;
+    font-size: 14px;
+    width: 322px;
+    font-family: 'Brandon-Light-Italic';
+    color: #000;
+  }
+
+  .location .subdetail {
+    color: #4f4f4f;
+    font-weight: 200;
+    font-size: 15px;
+    margin-bottom: 50px;
+  }
+
+  h3 {
+    font-size: 15px;
+    color: #4f4f4f;
+    font-weight: 200;
+  }
+
 </style>
