@@ -44,6 +44,13 @@
       </li>
     </ul>
 
+    <div class="carousel-text">
+      Coronela es un restaurante de comida mexicana contemporánea que se inspira en los platillos típicos del centro del país.
+      Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
+      Nuestro equipo crea menús que exploran los sabores y tradiciones mexicanas echando mano de ingredientes en temporada.
+      Martes a sábado de 8 a 22 horas.
+    </div>
+
     <carousel :perPage="1" :autoplay="true" paginationColor="transparent" paginationActiveColor="#1c449c" :loop="true" :autoplayTimeout="5000" :paginationSize="13">
       <slide>
         <img src="../assets/slider/slider_1.png" class="carousel-img">
@@ -63,7 +70,7 @@
       <div class="section reservations">
         <h1 v-if="this.language === 'spanish'">· &nbsp Reservaciones &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Reservations &nbsp ·</h1>
-        <p class="detail">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros.</p>
+        <p class="detail">Aceptamos reservaciones con hasta 30 días de anticipación, desde una persona hasta grupos grandes. </p>
         <div v-if="this.language === 'spanish'" class="button"> reserva aquí </div>
         <div v-if="this.language === 'english'" class="button"> reserve here </div>
         <hr>
@@ -117,7 +124,7 @@
           :center="{lat:19.436181, lng:-99.155800}"
           :zoom="16"
           style="width: 760px; height: 358px; margin: 50px auto"
-          :options="{styles: mapStyles, mapTypeControl: false}"
+          :options="{styles: mapStyles, mapTypeControl: false, scrollwheel: false}"
           >
           <gmap-marker
             :position="{lat:19.436181, lng:-99.155800}"
@@ -156,7 +163,8 @@
         <hr class="press-kit">
 
         <h3> KIT DE PRENSA </h3>
-        <p class="press-kit"> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+        <p class="press-kit" v-if="this.language === 'spanish'"> Para mayor información, escríbenos un correo o descarga nuestro kit de prensa. </p>
+        <p class="press-kit" v-if="this.language === 'english'"> For additional information, please write us an email or download our presskit. </p>
 
         <div v-if="this.language === 'spanish'" class="button"> descargar </div>
         <div v-if="this.language === 'english'" class="button"> download </div>
@@ -165,11 +173,18 @@
       </div>
 
       <div class="section events">
+
         <h1 v-if="this.language === 'spanish'">· &nbsp Eventos &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Events &nbsp ·</h1>
-        <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+
+        <p v-if="this.language === 'spanish'"> Coronela ofrece experiencias privadas en la terraza. Nuestros eventos se adaptan a tus necesidades y posibilidades para que tu experiencia sea única.
+                                               Para más información sobre las diferentes opciones de alimentos, bebidas y características, por favor contáctanos y te atenderemos a la brevedad. </p>
+        <p v-if="this.language === 'english'"> Coronela offers different private dining experiences in our rooftop, all suitable for parties of up to 80 seated guests. Our events can adapt to your needs and possibilities in order to provide a unique experience.
+                                               For more information about hosting an event with us, please contact the using the button below. </p>
+
         <div v-if="this.language === 'spanish'" class="button"> conoce más </div>
         <div v-if="this.language === 'english'" class="button"> see more </div>
+
         <hr>
       </div>
 
@@ -324,6 +339,16 @@
 
   .carousel-img {
     width: 100%;
+  }
+
+  .carousel-text {
+    position: absolute;
+    top: 478px;
+    right: 250px;
+    z-index: 401;
+    color: white;
+    width: 400px;
+    text-align: left;
   }
 
   ul.navbar {
