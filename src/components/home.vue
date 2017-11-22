@@ -56,6 +56,8 @@
       </slide>
     </carousel>
 
+    <div class="vignette"></div>
+
     <div v-if="this.language === 'spanish'" class="carousel-text">
       Coronela es un restaurante de comida mexicana contemporánea que se inspira en los platillos típicos del centro del país.
       <br>Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
@@ -381,6 +383,19 @@
     text-align: left;
   }
 
+  .vignette {
+    position: absolute;
+    top: 188px;
+    left: 0;
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 calc(50% - 640px);
+    height: 610px;
+    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+    z-index: 401;
+    pointer-events: none;
+  }
+
   ul.navbar {
     position: absolute;
     z-index: 900;
@@ -614,6 +629,10 @@
     .VueCarousel {
       margin-left: calc(50% - 635px);
       min-width: 100vw;
+    }
+
+    .vignette {
+      margin: 0;
     }
   }
 
