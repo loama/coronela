@@ -153,10 +153,10 @@
           </div>
         </div>
 
-        <hr>
+        <hr class="press-kit">
 
         <h3> KIT DE PRENSA </h3>
-        <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+        <p class="press-kit"> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
 
         <div v-if="this.language === 'spanish'" class="button"> descargar </div>
         <div v-if="this.language === 'english'" class="button"> download </div>
@@ -176,20 +176,48 @@
       <div class="section contact">
         <h1 v-if="this.language === 'spanish'">· &nbsp Contacto &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Contact &nbsp ·</h1>
+
         <div class="row">
+
           <div class="col-md-20p">
-            <img src="../assets/contacto/iconos_redes/hover/icono_telefono.svg">
+            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_telefono.svg">
+            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_telefono.svg">
           </div>
-          <div class="col-md-20p">a</div>
-          <div class="col-md-20p">a</div>
-          <div class="col-md-20p">a</div>
-          <div class="col-md-20p">a</div>
+          <div class="col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_fb_messenger.svg">
+            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_fb_messenger.svg">
+          </div>
+          <div class="col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_correo.svg">
+            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_correo.svg">
+          </div>
+          <div class="col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_facebook.svg">
+            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_facebook.svg">
+          </div>
+          <div class="col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_instagram.svg">
+            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_instagram.svg">
+          </div>
+
           <div class="col-md-20p"></div>
-          <div class="col-md-20p">a</div>
-          <div class="col-md-20p">a</div>
-          <div class="col-md-20p">a</div>
+
+          <div class="col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_yelp.svg">
+            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_yelp.svg">
+          </div>
+          <div class="col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_foursquare.svg">
+            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_foursquare.svg">
+          </div>
+          <div class="col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_tripadvisor.svg">
+            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_tripadvisor.svg">
+          </div>
+
         </div>
-        <hr>
+
+        <img class="rubrica" src="../assets/contacto/rubrica.svg">
       </div>
 
     </div>
@@ -441,4 +469,63 @@
     font-weight: 200;
   }
 
+  .press .col p {
+    padding: 0 32px;
+    margin-top: -12px;
+    font-size: 15px;
+    color: #4f4f4f;
+    font-family: 'Brandon-Light-Italic';
+  }
+
+  p.press-kit {
+    margin: 0 auto;
+    width: 376px;
+    font-size: 15px;
+    font-family: 'Brandon-Light-Italic';
+  }
+
+  hr.press-kit {
+    margin: 42px auto;
+    width: 42px;
+  }
+
+  .events p {
+    width: 499px;
+    margin: 0 auto;
+    font-size: 15px;
+    font-family: 'Brandon-Light-Italic';
+  }
+
+  .contact {
+    padding-top: 40px;
+  }
+
+  .contact h1 {
+    padding-bottom: 22px;
+  }
+
+  .contact .col-md-20p {
+    position: relative;
+    height: 70px;
+  }
+
+  .contact .hover, .contact .main {
+    cursor: pointer;
+  }
+
+  .contact .hover {
+    display: none;
+  }
+
+  .contact .col-md-20p:hover .hover {
+    display: inline;
+  }
+
+  .contact .col-md-20p:hover .main {
+    display: none;
+  }
+
+  .rubrica {
+    margin-top: 16px;
+  }
 </style>
