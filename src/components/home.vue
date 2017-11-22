@@ -200,45 +200,46 @@
 
         <div class="row">
 
-          <div class="col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_telefono.svg">
-            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_telefono.svg">
+          <div class="col-4 col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_telefono.svg">
+            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_telefono.svg">
           </div>
-          <div class="col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_fb_messenger.svg">
-            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_fb_messenger.svg">
+          <div class="col-4 col-sm-4 col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_fb_messenger.svg">
+            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_fb_messenger.svg">
           </div>
-          <div class="col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_correo.svg">
-            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_correo.svg">
+          <div class="col-4 col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_correo.svg">
+            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_correo.svg">
           </div>
-          <div class="col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_facebook.svg">
-            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_facebook.svg">
+          <div class="col-4 col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_facebook.svg">
+            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_facebook.svg">
           </div>
-          <div class="col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_instagram.svg">
-            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_instagram.svg">
+          <div class="col-4 col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_instagram.svg">
+            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_instagram.svg">
           </div>
 
           <div class="col-md-20p"></div>
 
-          <div class="col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_yelp.svg">
-            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_yelp.svg">
+          <div class="col-4 col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_yelp.svg">
+            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_yelp.svg">
           </div>
-          <div class="col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_foursquare.svg">
-            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_foursquare.svg">
+          <div class="col-4 col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_foursquare.svg">
+            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_foursquare.svg">
           </div>
-          <div class="col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_redes/hover/icono_tripadvisor.svg">
-            <img class="main" src="../assets/contacto/iconos_redes/azules/icono_tripadvisor.svg">
+          <div class="col-4 col-md-20p">
+            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_tripadvisor.svg">
+            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_tripadvisor.svg">
           </div>
 
         </div>
 
         <img class="rubrica" src="../assets/contacto/rubrica.svg">
+        <p class="footer"><a>Facturación</a> &nbsp &nbsp | &nbsp &nbsp Derechos reservados ©, 2017.</p>
       </div>
 
     </div>
@@ -377,7 +378,7 @@
     font-size: 16px;
     transition: padding 0.3s;
     padding: 0;
-    margin-left: -2px;
+    margin-left: 0px;
   }
 
   ul.scrolled {
@@ -386,7 +387,7 @@
     background: #fafafa;
     color: #1c449c;
     margin-top: 0;
-    padding: 48px 0 24px 0;
+    padding: 36px 0 24px 0;
   }
 
   li {
@@ -463,6 +464,7 @@
     height: 264px;
     background-image: url('../assets/sello/sello_coronela.png');
     z-index: 200;
+    background-size: cover;
   }
 
   .row {
@@ -549,6 +551,10 @@
     padding-bottom: 22px;
   }
 
+  .contact img {
+    height: 32px;
+  }
+
   .contact .col-md-20p {
     position: relative;
     height: 70px;
@@ -570,8 +576,20 @@
     display: none;
   }
 
-  .rubrica {
+  .footer {
+   font-size: 12px;
+   color: #4f4f4f;
+  }
+
+  .footer a:hover {
+    color: #1c449c;
+    cursor: pointer;
+  }
+
+  .contact .rubrica {
     margin-top: 16px;
+    width: 108px;
+    height: 59px;
   }
 
   @media screen and (max-width:1280px) {
@@ -580,7 +598,8 @@
     }
 
     .VueCarousel {
-      margin-left: calc(50% - 640px);
+      margin-left: calc(50% - 635px);
+      min-width: 100vw;
     }
   }
 
@@ -600,6 +619,21 @@
 
     .reservations {
       padding-top: 200px;
+    }
+
+    .lang {
+      right: -20px;
+    }
+
+    .watermark {
+      width: 75px;
+	    height: 136px;
+    }
+
+    .contact .rubrica {
+      margin-top: 16px;
+      width: 71px;
+      height: 39px;
     }
   }
 </style>

@@ -11,7 +11,7 @@
 </script>
 
 <style>
-  body {
+  body, .home {
     margin: 0;
     background: #FAFAFA;
     font-family: 'Brandon';
@@ -66,6 +66,12 @@
     -ms-flex-positive: 1;
         flex-grow: 1;
     max-width: 100%;
+  }
+
+  .col-4 {
+    -ms-flex: 0 0 33.33%;
+        flex: 0 0 33.33%;
+    max-width: 33.33%;
   }
 
   @media (min-width: 576px) {

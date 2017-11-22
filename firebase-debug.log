@@ -1,23 +1,23 @@
-[debug] [2017-11-22T18:24:52.862Z] ----------------------------------------------------------------------
-[debug] [2017-11-22T18:24:52.865Z] Command:       /Users/jaime/.nvm/versions/node/v6.10.0/bin/node /Users/jaime/.nvm/versions/node/v6.10.0/bin/firebase deploy
-[debug] [2017-11-22T18:24:52.865Z] CLI Version:   3.9.2
-[debug] [2017-11-22T18:24:52.865Z] Platform:      darwin
-[debug] [2017-11-22T18:24:52.865Z] Node Version:  v6.10.0
-[debug] [2017-11-22T18:24:52.865Z] Time:          Wed Nov 22 2017 12:24:52 GMT-0600 (CST)
-[debug] [2017-11-22T18:24:52.865Z] ----------------------------------------------------------------------
+[debug] [2017-11-22T20:13:31.719Z] ----------------------------------------------------------------------
+[debug] [2017-11-22T20:13:31.721Z] Command:       /Users/jaime/.nvm/versions/node/v6.10.0/bin/node /Users/jaime/.nvm/versions/node/v6.10.0/bin/firebase deploy
+[debug] [2017-11-22T20:13:31.722Z] CLI Version:   3.9.2
+[debug] [2017-11-22T20:13:31.722Z] Platform:      darwin
+[debug] [2017-11-22T20:13:31.722Z] Node Version:  v6.10.0
+[debug] [2017-11-22T20:13:31.722Z] Time:          Wed Nov 22 2017 14:13:31 GMT-0600 (CST)
+[debug] [2017-11-22T20:13:31.722Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-11-22T18:24:52.880Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-11-22T18:24:52.880Z] > authorizing via signed-in user
-[debug] [2017-11-22T18:24:52.882Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/coronela-5f296  
- Wed Nov 22 2017 12:24:52 GMT-0600 (CST)
-[debug] [2017-11-22T18:24:53.441Z] <<< HTTP RESPONSE 200
-[debug] [2017-11-22T18:24:53.442Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/coronela-5f296/tokens  
- Wed Nov 22 2017 12:24:53 GMT-0600 (CST)
-[debug] [2017-11-22T18:24:53.975Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-22T20:13:31.738Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-22T20:13:31.738Z] > authorizing via signed-in user
+[debug] [2017-11-22T20:13:31.740Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/coronela-5f296  
+ Wed Nov 22 2017 14:13:31 GMT-0600 (CST)
+[debug] [2017-11-22T20:13:32.441Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-22T20:13:32.443Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/coronela-5f296/tokens  
+ Wed Nov 22 2017 14:13:32 GMT-0600 (CST)
+[debug] [2017-11-22T20:13:32.990Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'coronela-5f296'...
 [info] 
 [info] i  deploying hosting
 [info] i  hosting: preparing dist directory for upload...
-[debug] [2017-11-22T18:24:54.939Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/coronela-5f296/uploads/-KzZyRBjXz52atggfQ0k?fileCount=20&message=  
- Wed Nov 22 2017 12:24:54 GMT-0600 (CST)
+[debug] [2017-11-22T20:13:34.508Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/coronela-5f296/uploads/-Kz_MIszdjf5bDoqLB6G?fileCount=20&message=  
+ Wed Nov 22 2017 14:13:34 GMT-0600 (CST)
