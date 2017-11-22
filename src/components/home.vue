@@ -44,13 +44,6 @@
       </li>
     </ul>
 
-    <div class="carousel-text">
-      Coronela es un restaurante de comida mexicana contemporánea que se inspira en los platillos típicos del centro del país.
-      Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
-      Nuestro equipo crea menús que exploran los sabores y tradiciones mexicanas echando mano de ingredientes en temporada.
-      Martes a sábado de 8 a 22 horas.
-    </div>
-
     <carousel :perPage="1" :autoplay="true" paginationColor="transparent" paginationActiveColor="#1c449c" :loop="true" :autoplayTimeout="5000" :paginationSize="13">
       <slide>
         <img src="../assets/slider/slider_1.png" class="carousel-img">
@@ -63,6 +56,13 @@
       </slide>
     </carousel>
 
+    <div class="carousel-text">
+      Coronela es un restaurante de comida mexicana contemporánea que se inspira en los platillos típicos del centro del país.
+      <br>Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
+      <br>Nuestro equipo crea menús que exploran los sabores y tradiciones mexicanas echando mano de ingredientes en temporada.
+      <br>Martes a sábado de 8 a 22 horas.
+    </div>
+
     <div class="watermark"></div>
 
     <div v-scroll-spy="scrollPos">
@@ -71,8 +71,14 @@
         <h1 v-if="this.language === 'spanish'">· &nbsp Reservaciones &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Reservations &nbsp ·</h1>
         <p class="detail">Aceptamos reservaciones con hasta 30 días de anticipación, desde una persona hasta grupos grandes. </p>
-        <div v-if="this.language === 'spanish'" class="button"> reserva aquí </div>
-        <div v-if="this.language === 'english'" class="button"> reserve here </div>
+
+        <div class="row">
+          <div v-if="this.language === 'spanish'" class="button"> reserva aquí </div>
+          <div v-if="this.language === 'english'" class="button"> reserve here </div>
+          <div v-if="this.language === 'spanish'" class="button"> llámanos </div>
+          <div v-if="this.language === 'english'" class="button"> call us </div>
+        </div>
+
         <hr>
       </div>
 
@@ -123,7 +129,7 @@
         <gmap-map
           :center="{lat:19.436181, lng:-99.155800}"
           :zoom="16"
-          style="width: 760px; height: 358px; margin: 50px auto"
+          style="width: 760px; height: 358px; margin: 50px auto; max-width: calc(100% - 64px)"
           :options="{styles: mapStyles, mapTypeControl: false, scrollwheel: false}"
           >
           <gmap-marker
@@ -328,13 +334,22 @@
   }
 
   .header-line {
+    position: absolute;
+    left: 0;
     margin: 0;
     border: 1px solid #1c449c;
+    width: 100vw;
+    z-index: 500;
   }
 
   .VueCarousel {
     position: relative;
     z-index: 400;
+  }
+
+  .VueCarousel, .VueCarousel-inner, .VueCarousel-slide , .VueCarousel-slide img {
+    min-height: 338px;
+    width: 1280px;
   }
 
   .carousel-img {
@@ -343,8 +358,8 @@
 
   .carousel-text {
     position: absolute;
-    top: 478px;
-    right: 250px;
+    top: 400px;
+    right: calc(50% - 600px);
     z-index: 401;
     color: white;
     width: 400px;
@@ -362,6 +377,7 @@
     font-size: 16px;
     transition: padding 0.3s;
     padding: 0;
+    margin-left: -2px;
   }
 
   ul.scrolled {
@@ -429,6 +445,10 @@
     color: #4f4f4f;
   }
 
+  .reservations .button {
+    display: inline;
+  }
+
   .section hr {
     width: 608px;
     max-width: calc(100% - 236px);
@@ -464,7 +484,7 @@
     padding-right: 32px;
     line-height: 28px;
     margin-top: -10px;
-    color: #4f4f4f;
+    color: #000;
     font-weight: 300;
     font-family: 'Brandon-Light-Italic';
   }
@@ -552,5 +572,34 @@
 
   .rubrica {
     margin-top: 16px;
+  }
+
+  @media screen and (max-width:1280px) {
+    .carousel-text {
+      right: 40px;
+    }
+
+    .VueCarousel {
+      margin-left: calc(50% - 640px);
+    }
+  }
+
+  @media screen and (max-width:992px) {
+    .carousel-text {
+      top: 280px;
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .carousel-text {
+      top: 480px;
+      color: black;
+      width: calc(100% - 64px);
+      right: 32px;
+    }
+
+    .reservations {
+      padding-top: 200px;
+    }
   }
 </style>

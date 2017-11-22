@@ -14,7 +14,9 @@
   body {
     margin: 0;
     background: #FAFAFA;
-    font-family: 'Brandon'
+    font-family: 'Brandon';
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   @font-face {
