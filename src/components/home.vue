@@ -56,11 +56,21 @@
       </slide>
     </carousel>
 
-    <div class="carousel-text">
+    <div v-if="this.language === 'spanish'" class="carousel-text">
       Coronela es un restaurante de comida mexicana contemporánea que se inspira en los platillos típicos del centro del país.
       <br>Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
       <br>Nuestro equipo crea menús que exploran los sabores y tradiciones mexicanas echando mano de ingredientes en temporada.
       <br>Martes a sábado de 8 a 22 horas.
+    </div>
+
+    <div v-if="this.language === 'english'" class="carousel-text">
+      Coronela is a restaurant serving contemporary Mexican food inspired by the typical dishes of the center region of the country.
+      <br>
+      At the heart of the historic Tabacalera neighborhood in Mexico City, Coronela's terrace has a privileged view of the Plaza de la República and the Monumento a la Revolución.
+      <br>
+      Our team designs menus that explore Mexican flavors and traditions using seasonal ingredients.
+      <br>
+      Tuesday to Saturday from 8 a.m. to 10 p.m.
     </div>
 
     <div class="watermark"></div>
@@ -70,8 +80,8 @@
       <div class="section reservations">
         <h1 v-if="this.language === 'spanish'">· &nbsp Reservaciones &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Reservations &nbsp ·</h1>
-        <p class="detail">Aceptamos reservaciones con hasta 30 días de anticipación, desde una persona hasta grupos grandes. </p>
-
+        <p v-if="this.language === 'spanish'" class="detail">Aceptamos reservaciones con hasta 30 días de anticipación, desde una persona hasta grupos grandes. </p>
+        <p v-if="this.language === 'english'"class="detail">Reservations accepted 30 days in advance. We hold half of our tables for walk-ins. For reservation requests, please call us or use the button below. </p>
         <div class="row">
           <div v-if="this.language === 'spanish'" class="button"> reserva aquí </div>
           <div v-if="this.language === 'english'" class="button"> reserve here </div>
@@ -99,24 +109,23 @@
             <h2>ESPECIAL DEL DÍA</h2>
             <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
           </div>
-        </div>
+       </div>
 
-        <div v-if="this.language === 'english'">
-          <div class="row menus" v-if="this.language === 'spanish'">
-            <div class="col col-md-4">
-              <h2>BREAKFASTS</h2>
-              <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
-            </div>
-            <div class="col col-md-4">
-              <h2>MEALS</h2>
-              <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
-            </div>
-            <div class="col col-md-4">
-              <h2>TODAY SPECIALS</h2>
-              <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
-            </div>
+       <div class="row menus" v-if="this.language === 'english'">
+         <div class="col col-md-4">
+            <h2>BREAKFASTS</h2>
+            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+          </div>
+          <div class="col col-md-4">
+            <h2>LUNCH & DINNER </h2>
+            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+          </div>
+          <div class="col col-md-4">
+            <h2>BAR MENU</h2>
+            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
           </div>
         </div>
+
         <hr>
       </div>
 
@@ -124,7 +133,8 @@
         <h1 v-if="this.language === 'spanish'">· &nbsp Ubicación &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Location &nbsp ·</h1>
 
-        <p class="detail">Valentín Gómez Farías #2, Colonia Tabacalera, Delegación Cuauhtémoc, Ciudad de México, México</p>
+        <p v-if="this.language === 'spanish'" class="detail">Valentín Gómez Farías #2, Colonia Tabacalera, Delegación Cuauhtémoc, Ciudad de México, México</p>
+        <p v-if="this.language === 'english'" class="detail">Valentín Gómez Farías #2, Tabacalera, Mexico City, Mexico</p>
 
         <gmap-map
           :center="{lat:19.436181, lng:-99.155800}"
@@ -139,10 +149,10 @@
         </gmap-map>
 
         <p v-if="this.language === 'spanish'" class="subdetail">
-          En la Plaza de la República &nbsp&nbsp · &nbsp&nbsp No contamos con valet parking &nbsp&nbsp · &nbsp&nbsp Estacionamientos por la zona </p>
-        </p>
-        <p v-if="this.language === 'english'">
           En la Plaza de la República &nbsp&nbsp · &nbsp&nbsp No contamos con valet parking &nbsp&nbsp · &nbsp&nbsp Estacionamientos por la zona
+        </p>
+        <p v-if="this.language === 'english'" class="subdetail">
+          In Plaza de la República &nbsp&nbsp · &nbsp&nbsp No valet parking &nbsp&nbsp · &nbsp&nbsp Parking lots available in the area
         </p>
         <hr>
       </div>
@@ -168,7 +178,9 @@
 
         <hr class="press-kit">
 
-        <h3> KIT DE PRENSA </h3>
+        <h3 v-if="this.language === 'spanish'"> KIT DE PRENSA </h3>
+        <h3 v-if="this.language === 'english'"> PRESS KIT </h3>
+
         <p class="press-kit" v-if="this.language === 'spanish'"> Para mayor información, escríbenos un correo o descarga nuestro kit de prensa. </p>
         <p class="press-kit" v-if="this.language === 'english'"> For additional information, please write us an email or download our presskit. </p>
 
@@ -239,7 +251,9 @@
         </div>
 
         <img class="rubrica" src="../assets/contacto/rubrica.svg">
-        <p class="footer"><a>Facturación</a> &nbsp &nbsp | &nbsp &nbsp Derechos reservados ©, 2017.</p>
+
+        <p v-if="this.language === 'spanish'" class="footer"><a>Facturación</a> &nbsp &nbsp | &nbsp &nbsp Derechos reservados ©, 2017.</p>
+        <p v-if="this.language === 'english'" class="footer"><a>Billing</a> &nbsp &nbsp | &nbsp &nbsp Copyright ©, 2017.</p>
       </div>
 
     </div>
