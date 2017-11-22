@@ -637,21 +637,20 @@
   }
 
   @media screen and (max-width:992px) {
-    .carousel-text {
-      top: 280px;
-    }
   }
 
   @media screen and (max-width:768px) {
     .carousel-text {
-      top: 480px;
-      color: black;
+      top: 832px;
       width: calc(100% - 64px);
       right: 32px;
+      text-align: center;
+      color: #000;
+      font-family: 'Brandon-Light-Italic';
     }
 
     .reservations {
-      padding-top: 200px;
+      padding-top: 232px;
     }
 
     .lang {
@@ -667,6 +666,18 @@
       margin-top: 16px;
       width: 71px;
       height: 39px;
+    }
+  }
+
+  @media screen and (max-width:572px) {
+    .reservations {
+      padding-top: 280px;
+    }
+  }
+
+  @media screen and (max-width:320px) {
+    .reservations {
+      padding-top: 400px;
     }
   }
 </style>
