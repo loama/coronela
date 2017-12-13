@@ -1,6 +1,11 @@
 <template>
   <div class="home">
 
+    <div class="fb-customerchat"
+     page_id="347940995577109"
+     minimized="true">
+    </div>
+
     <div class="header">
       <div class="texture"></div>
       <div class="logo"></div>
@@ -60,18 +65,18 @@
 
     <div v-if="this.language === 'spanish'" class="carousel-text">
       Coronela es un restaurante de comida mexicana contemporánea que se inspira en los platillos típicos del centro del país.
-      <br>Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
-      <br>Nuestro equipo crea menús que exploran los sabores y tradiciones mexicanas echando mano de ingredientes en temporada.
-      <br>Martes a sábado de 8 a 22 horas.
+      <br><br>Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
+      <br><br>Nuestro equipo crea menús que exploran los sabores y tradiciones mexicanas echando mano de ingredientes en temporada.
+      <br><br>Martes a sábado de 8 a 22 horas.
     </div>
 
     <div v-if="this.language === 'english'" class="carousel-text">
       Coronela is a restaurant serving contemporary Mexican food inspired by the typical dishes of the center region of the country.
-      <br>
+      <br><br>
       At the heart of the historic Tabacalera neighborhood in Mexico City, Coronela's terrace has a privileged view of the Plaza de la República and the Monumento a la Revolución.
-      <br>
+      <br><br>
       Our team designs menus that explore Mexican flavors and traditions using seasonal ingredients.
-      <br>
+      <br><br>
       Tuesday to Saturday from 8 a.m. to 10 p.m.
     </div>
 
@@ -84,11 +89,11 @@
         <h1 v-if="this.language === 'english'">· &nbsp Reservations &nbsp ·</h1>
         <p v-if="this.language === 'spanish'" class="detail">Aceptamos reservaciones con hasta 30 días de anticipación, desde una persona hasta grupos grandes. </p>
         <p v-if="this.language === 'english'"class="detail">Reservations accepted 30 days in advance. We hold half of our tables for walk-ins. For reservation requests, please call us or use the button below. </p>
-        <div class="row">
+        <div class="action">
           <div v-if="this.language === 'spanish'" class="button"> reserva aquí </div>
           <div v-if="this.language === 'english'" class="button"> reserve here </div>
-          <div v-if="this.language === 'spanish'" class="button"> llámanos </div>
-          <div v-if="this.language === 'english'" class="button"> call us </div>
+          <div v-if="this.language === 'spanish'" class="or_call_us">o llámanos al <a href="">5555•5555</a></div>
+          <div v-if="this.language === 'english'" class="or_call_us">or call us at </div>
         </div>
 
         <hr>
@@ -188,6 +193,8 @@
 
         <div v-if="this.language === 'spanish'" class="button"> descargar </div>
         <div v-if="this.language === 'english'" class="button"> download </div>
+
+        <!--o escríbenos a info@coronela.mx -->
 
         <hr>
       </div>
@@ -293,12 +300,32 @@
     },
     created () {
       window.addEventListener('scroll', this.handleScroll)
+      /* eslint-disable */
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '1226500084116130',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.11'
+        });
+        console.log('done')
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+      /* eslint-enable */
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
   .home {
     width: 100%;
     max-width: 1280px;
@@ -338,7 +365,7 @@
     z-index: 2000;
     float: center;
     display: inline;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .lang span {
@@ -381,6 +408,7 @@
     color: white;
     width: 400px;
     text-align: left;
+    text-shadow: 1px 1px 2px black;
   }
 
   .vignette {
@@ -449,7 +477,7 @@
     max-width: 500px;
     margin: 0 auto;
     color: #A4A4A4;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .button {
@@ -470,13 +498,29 @@
     background: #1c449c;
   }
 
+  .reservations {
+    position: relative;
+  }
+
   .reservations h1 {
     margin-bottom: 24px;
     color: #4f4f4f;
   }
 
+  .reservations .action {
+    height: 158px;
+  }
+
   .reservations .button {
-    display: inline;
+    position: absolute;
+    top: 160px;;
+    left: calc(50% - 140px);
+  }
+
+  .reservations .or_call_us {
+    position: absolute;
+    top: 218px;
+    left: calc(50% - 30px);
   }
 
   .section hr {
@@ -517,7 +561,8 @@
     margin-top: -10px;
     color: #000;
     font-weight: 300;
-    font-family: 'Brandon-Light-Italic';
+    font-family: 'Brandon';
+    color: #a4a4a4;
   }
 
   .menus hr {
@@ -526,14 +571,14 @@
 
   .location .detail {
     margin-top: 22px;
-    font-size: 14px;
+    font-size: 15px;
     width: 322px;
-    font-family: 'Brandon-Light-Italic';
-    color: #000;
+    font-family: 'Brandon';
+    color: #a4a4a4;
   }
 
   .location .subdetail {
-    color: #4f4f4f;
+    color: #a4a4a4;
     font-weight: 200;
     font-size: 15px;
     margin-bottom: 50px;
@@ -549,15 +594,16 @@
     padding: 0 32px;
     margin-top: -12px;
     font-size: 15px;
-    color: #4f4f4f;
-    font-family: 'Brandon-Light-Italic';
+    color: #a4a4a4;
+    font-family: 'Brandon';
   }
 
   p.press-kit {
     margin: 0 auto;
     width: 376px;
     font-size: 15px;
-    font-family: 'Brandon-Light-Italic';
+    font-family: 'Brandon';
+    color: #a4a4a4;
   }
 
   hr.press-kit {
@@ -569,7 +615,8 @@
     width: 499px;
     margin: 0 auto;
     font-size: 15px;
-    font-family: 'Brandon-Light-Italic';
+    font-family: 'Brandon';
+    color: #a4a4a4;
   }
 
   .contact {
@@ -647,10 +694,19 @@
       text-align: center;
       color: #000;
       font-family: 'Brandon-Light-Italic';
+      text-shadow: none;
     }
 
     .reservations {
-      padding-top: 232px;
+      padding-top: 292px;
+    }
+
+    .reservations .button {
+      margin-top: 290px;
+    }
+
+    .reservations .or_call_us {
+      margin-top: 236px;
     }
 
     .lang {
