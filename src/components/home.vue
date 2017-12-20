@@ -13,6 +13,11 @@
         <span v-bind:class="{active: language === 'spanish'}" v-on:click="language='spanish'"> español &nbsp |</span>
         <span v-bind:class="{active: language === 'english'}" v-on:click="language='english'"> english </span>
       </div>
+
+      <div class="billing">
+        <p v-if="this.language === 'spanish'"><a href="#">Facturación</a></p>
+        <p v-if="this.language === 'english'"><a href="#">Billing</a></p>
+      </div>
     </div>
 
     <hr class="header-line">
@@ -92,8 +97,8 @@
         <div class="action">
           <div v-if="this.language === 'spanish'" class="button"> reserva aquí </div>
           <div v-if="this.language === 'english'" class="button"> reserve here </div>
-          <div v-if="this.language === 'spanish'" class="or_call_us">o llámanos al <a href="">5555•5555</a></div>
-          <div v-if="this.language === 'english'" class="or_call_us">or call us at </div>
+          <div v-if="this.language === 'spanish'" class="or_call_us">o llámanos al <a href="tel:57051359">5705•1359</a></div>
+          <div v-if="this.language === 'english'" class="or_call_us">or call us at <a href="tel:57051359">5705•1359</a></div>
         </div>
 
         <hr>
@@ -155,12 +160,31 @@
           ></gmap-marker>
         </gmap-map>
 
+        <hr class="press-kit">
+
         <p v-if="this.language === 'spanish'" class="subdetail">
           En la Plaza de la República &nbsp&nbsp · &nbsp&nbsp No contamos con valet parking &nbsp&nbsp · &nbsp&nbsp Estacionamientos por la zona
         </p>
         <p v-if="this.language === 'english'" class="subdetail">
           In Plaza de la República &nbsp&nbsp · &nbsp&nbsp No valet parking &nbsp&nbsp · &nbsp&nbsp Parking lots available in the area
         </p>
+
+        <h3 v-if="this.language === 'spanish'"> TRANSPORTE PÚBLICO </h3>
+        <h3 v-if="this.language === 'english'"> PUBLIC TRANSPORT </h3>
+
+        <p v-if="this.language === 'spanish'" class="subdetail">
+          Metrobús Línea 1 - Plaza de la República &nbsp&nbsp · &nbsp&nbsp
+          Metrobús Línea 4 - Plaza de la República &nbsp&nbsp · &nbsp&nbsp
+          Metrobús Línea 7 - Reforma &nbsp&nbsp · &nbsp&nbsp
+          Metro Línea 2 - Revolución
+        </p>
+        <p v-if="this.language === 'english'" class="subdetail">
+          Metrobus Line 1 - Plaza de la República &nbsp&nbsp · &nbsp&nbsp
+          Metrobus Line 4 - Plaza de la República &nbsp&nbsp · &nbsp&nbsp
+          Metrobus Line 7 - Reforma &nbsp&nbsp · &nbsp&nbsp
+          Subway line 2 - Revolución
+        </p>
+
         <hr>
       </div>
 
@@ -191,8 +215,14 @@
         <p class="press-kit" v-if="this.language === 'spanish'"> Para mayor información, escríbenos un correo o descarga nuestro kit de prensa. </p>
         <p class="press-kit" v-if="this.language === 'english'"> For additional information, please write us an email or download our presskit. </p>
 
-        <div v-if="this.language === 'spanish'" class="button"> descargar </div>
-        <div v-if="this.language === 'english'" class="button"> download </div>
+        <div class="action">
+          <div v-if="this.language === 'spanish'" class="button"> descargar </div>
+          <div v-if="this.language === 'english'" class="button"> download </div>
+          <div v-if="this.language === 'spanish'" class="or_call_us">o escríbenos a <a href="mailto:info@coronela.mx">info@coronela.mx</a></div>
+          <div v-if="this.language === 'english'" class="or_call_us">o email us at <a href="mailto:info@coronela.mx">info@coronela.mx</a></div>
+        </div>
+
+        <div class="spacer"></div>
 
         <!--o escríbenos a info@coronela.mx -->
 
@@ -209,8 +239,10 @@
         <p v-if="this.language === 'english'"> Coronela offers different private dining experiences in our rooftop, all suitable for parties of up to 80 seated guests. Our events can adapt to your needs and possibilities in order to provide a unique experience.
                                                For more information about hosting an event with us, please contact the using the button below. </p>
 
-        <div v-if="this.language === 'spanish'" class="button"> conoce más </div>
-        <div v-if="this.language === 'english'" class="button"> see more </div>
+        <a href="mailto:eventos@coronela.mx" target="_blank">                                      
+          <div v-if="this.language === 'spanish'" class="button"> conoce más </div>
+          <div v-if="this.language === 'english'" class="button"> see more </div>
+        </a>
 
         <hr>
       </div>
@@ -222,47 +254,63 @@
         <div class="row">
 
           <div class="col-4 col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_telefono.svg">
-            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_telefono.svg">
+            <a href="tel:57051359" target="_blank">
+              <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_telefono.svg">
+              <img class="main" src="../assets/contacto/iconos_rede/azules/icono_telefono.svg">
+            </a>
           </div>
           <div class="col-4 col-sm-4 col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_fb_messenger.svg">
-            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_fb_messenger.svg">
+            <a href="#" target="_blank">
+              <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_fb_messenger.svg">
+              <img class="main" src="../assets/contacto/iconos_rede/azules/icono_fb_messenger.svg">
+            </a>
           </div>
           <div class="col-4 col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_correo.svg">
-            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_correo.svg">
+            <a href="mailto:info@coronela.mx" target="_blank">
+              <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_correo.svg">
+              <img class="main" src="../assets/contacto/iconos_rede/azules/icono_correo.svg">
+            </a>
           </div>
           <div class="col-4 col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_facebook.svg">
-            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_facebook.svg">
+            <a href="https://www.facebook.com/coronelacdmx/" target="_blank">
+              <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_facebook.svg">
+              <img class="main" src="../assets/contacto/iconos_rede/azules/icono_facebook.svg">
+            </a>
           </div>
           <div class="col-4 col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_instagram.svg">
-            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_instagram.svg">
+            <a href="#" target="_blank">
+              <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_instagram.svg">
+              <img class="main" src="../assets/contacto/iconos_rede/azules/icono_instagram.svg">
+            </a>
           </div>
 
           <div class="col-md-20p"></div>
 
           <div class="col-4 col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_yelp.svg">
-            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_yelp.svg">
+            <a href="https://www.yelp.com/biz/coronela-ciudad-de-m%C3%A9xico-2" target="_blank">
+              <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_yelp.svg">
+              <img class="main" src="../assets/contacto/iconos_rede/azules/icono_yelp.svg">
+            </a>
           </div>
           <div class="col-4 col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_foursquare.svg">
-            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_foursquare.svg">
+            <a href="#" target="_blank">
+              <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_foursquare.svg">
+              <img class="main" src="../assets/contacto/iconos_rede/azules/icono_foursquare.svg">
+            </a>
           </div>
           <div class="col-4 col-md-20p">
-            <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_tripadvisor.svg">
-            <img class="main" src="../assets/contacto/iconos_rede/azules/icono_tripadvisor.svg">
+            <a href="https://www.tripadvisor.com.mx/Restaurant_Review-g150800-d13226955-Reviews-Coronela-Mexico_City_Central_Mexico_and_Gulf_Coast.html" target="_blank">
+              <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_tripadvisor.svg">
+              <img class="main" src="../assets/contacto/iconos_rede/azules/icono_tripadvisor.svg">
+            </a>
           </div>
 
         </div>
 
         <img class="rubrica" src="../assets/contacto/rubrica.svg">
 
-        <p v-if="this.language === 'spanish'" class="footer"><a>Facturación</a> &nbsp &nbsp | &nbsp &nbsp Derechos reservados ©, 2017.</p>
-        <p v-if="this.language === 'english'" class="footer"><a>Billing</a> &nbsp &nbsp | &nbsp &nbsp Copyright ©, 2017.</p>
+        <p v-if="this.language === 'spanish'" class="footer">Derechos reservados ©, 2017.</p>
+        <p v-if="this.language === 'english'" class="footer">Copyright ©, 2017.</p>
       </div>
 
     </div>
@@ -326,6 +374,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+  a {
+    color: #1c449c;
+    text-decoration: none;
+  }
+
   .home {
     width: 100%;
     max-width: 1280px;
@@ -355,6 +408,19 @@
     position: absolute;
     top: 32px;
     left: calc(50% - 134px);
+  }
+
+  .billing {
+    position: absolute;
+    top: 64px;
+    left: 20px;
+    transform: rotate(270deg);
+    font-size: 14px;
+  }
+
+  .billing a {
+    color: #2c3e50;
+    text-decoration: none;
   }
 
   .lang {
@@ -590,6 +656,10 @@
     font-weight: 200;
   }
 
+  .press {
+    position: relative;
+  }
+
   .press .col p {
     padding: 0 32px;
     margin-top: -12px;
@@ -609,6 +679,29 @@
   hr.press-kit {
     margin: 42px auto;
     width: 42px;
+  }
+
+  .press .action {
+    position: absolute;
+    height: 158px;
+  }
+
+  .press .button {
+    position: absolute;
+    top: 0;
+    left: calc(50vw - 140px);
+  }
+
+  .press .or_call_us {
+    position: absolute;
+    top: 56px;
+    left: calc(50vw - 30px);
+    width: 400px;
+    text-align: left;
+  }
+
+  .press .spacer {
+    height: 180px;
   }
 
   .events p {
@@ -727,13 +820,29 @@
 
   @media screen and (max-width:572px) {
     .reservations {
-      padding-top: 280px;
+      padding-top: 368px;
+    }
+
+    .reservations .button {
+      margin-top: 340px;
+    }
+
+    .reservations .or_call_us {
+      margin-top: 286px;
     }
   }
 
   @media screen and (max-width:320px) {
     .reservations {
-      padding-top: 400px;
+      padding-top: 440px;
+    }
+
+    .reservations .button {
+      margin-top: 440px;
+    }
+
+    .reservations .or_call_us {
+      margin-top: 386px;
     }
   }
 </style>
