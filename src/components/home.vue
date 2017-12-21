@@ -239,7 +239,7 @@
         <p v-if="this.language === 'english'"> Coronela offers different private dining experiences in our rooftop, all suitable for parties of up to 80 seated guests. Our events can adapt to your needs and possibilities in order to provide a unique experience.
                                                For more information about hosting an event with us, please contact the using the button below. </p>
 
-        <a href="mailto:eventos@coronela.mx" target="_blank">                                      
+        <a href="mailto:eventos@coronela.mx" target="_blank">
           <div v-if="this.language === 'spanish'" class="button"> conoce más </div>
           <div v-if="this.language === 'english'" class="button"> see more </div>
         </a>
@@ -759,6 +759,16 @@
     margin-top: 16px;
     width: 108px;
     height: 59px;
+  }
+
+  @media screen and (min-width:1280px) {
+    .press .button {
+      left: 500px;
+    }
+
+    .press .or_call_us {
+      left: 610px;
+    }
   }
 
   @media screen and (max-width:1280px) {
