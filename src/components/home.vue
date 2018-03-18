@@ -54,7 +54,7 @@
       </li>
     </ul>
 
-    <carousel :perPage="1" :autoplay="true" paginationColor="transparent" paginationActiveColor="#1c449c" :loop="true" :autoplayTimeout="5000" :paginationSize="13">
+    <carousel :perPage="1" :autoplay="true" paginationColor="transparent" paginationActiveColor="#1c449c" :loop="true" :autoplayTimeout="8000" :paginationSize="13">
       <slide>
         <img src="../assets/slider/slider_1.png" class="carousel-img">
       </slide>
@@ -69,20 +69,22 @@
     <div class="vignette"></div>
 
     <div v-if="this.language === 'spanish'" class="carousel-text">
-      Coronela es un restaurante de comida mexicana contemporánea que se inspira en los platillos típicos del centro del país.
+      Coronela es un restaurante de exquisita comida mexicana que se inspira en los platillos típicos del centro del país.
       <br><br>Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
       <br><br>Nuestro equipo crea menús que exploran los sabores y tradiciones mexicanas echando mano de ingredientes en temporada.
-      <br><br>Martes a sábado de 8 a 22 horas.
+      <br><br>Lunes a viernes de 8 a.m. a 17 p.m. <br>
+              Sábado de 9 a.m. a 13 p.m.
     </div>
 
     <div v-if="this.language === 'english'" class="carousel-text">
-      Coronela is a restaurant serving contemporary Mexican food inspired by the typical dishes of the center region of the country.
+      Coronela is a restaurant serving exquisite Mexican food inspired by the typical dishes of the center region of the country.
       <br><br>
       At the heart of the historic Tabacalera neighborhood in Mexico City, Coronela's terrace has a privileged view of the Plaza de la República and the Monumento a la Revolución.
       <br><br>
       Our team designs menus that explore Mexican flavors and traditions using seasonal ingredients.
       <br><br>
-      Tuesday to Saturday from 8 a.m. to 10 p.m.
+      Monday to Friday from 8 a.m. to 5 p.m.<br>
+      Saturday 9 a.m. to 1 p.m.
     </div>
 
     <div class="watermark"></div>
@@ -111,30 +113,30 @@
         <div class="row menus" v-if="this.language === 'spanish'">
           <div class="col col-md-4">
             <h2>DESAYUNOS</h2>
-            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            <p> - <br>Complementa tu desayuno con un amplio menú de bollería y mermeladas artesanales. </p>
           </div>
           <div class="col col-md-4">
-            <h2>COMIDAS</h2>
-            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            <h2>COMIDAS Y CENAS</h2>
+            <p> - <br> El menú respeta la cocina tradicional pero introduce la audacia de lo contemporáneo y elementos de modernidad culinaria. </p>
           </div>
           <div class="col col-md-4">
-            <h2>ESPECIAL DEL DÍA</h2>
-            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            <h2>ESPECIAL DE LA SEMANA</h2>
+            <p> - <br> Cada semana preparamos especiales con ingredientes locales y de temporada que se suman a nuestra oferta. </p>
           </div>
        </div>
 
        <div class="row menus" v-if="this.language === 'english'">
          <div class="col col-md-4">
             <h2>BREAKFASTS</h2>
-            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            <p> - <br> Complement your breakfast with an extensive menu of homemade bread and jams. </p>
           </div>
           <div class="col col-md-4">
-            <h2>LUNCH & DINNER </h2>
-            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            <h2>LUNCH AND DINNER</h2>
+            <p> - <br> The menu respects the traditional cuisine, while also introducing the audacity of contemporary elements. </p>
           </div>
           <div class="col col-md-4">
-            <h2>BAR MENU</h2>
-            <p> - <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a. </p>
+            <h2>WEEKLY SPECIALS</h2>
+            <p> - <br> Each week we prepare specials with local and seasonal ingredients. </p>
           </div>
         </div>
 
@@ -192,7 +194,7 @@
         <h1 v-if="this.language === 'spanish'">· &nbsp Prensa &nbsp ·</h1>
         <h1 v-if="this.language === 'english'">· &nbsp Press &nbsp ·</h1>
 
-        <div class="row" v-if="this.language === 'spanish'">
+        <div class="row" v-if="this.language === 'spanish'" style="display:none">
           <div class="col col-md-4">
             <h2>TRIP ADVISOR</h2>
             <p> - <br> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a." </p>
@@ -260,7 +262,7 @@
             </a>
           </div>
           <div class="col-4 col-sm-4 col-md-20p">
-            <a href="#" target="_blank">
+            <a href="https://m.me/coronelacdmx/" target="_blank">
               <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_fb_messenger.svg">
               <img class="main" src="../assets/contacto/iconos_rede/azules/icono_fb_messenger.svg">
             </a>
@@ -278,7 +280,7 @@
             </a>
           </div>
           <div class="col-4 col-md-20p">
-            <a href="#" target="_blank">
+            <a href="https://www.instagram.com/coronelamx" target="_blank">
               <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_instagram.svg">
               <img class="main" src="../assets/contacto/iconos_rede/azules/icono_instagram.svg">
             </a>
@@ -293,7 +295,7 @@
             </a>
           </div>
           <div class="col-4 col-md-20p">
-            <a href="#" target="_blank">
+            <a href="https://es.foursquare.com/v/coronela/5a2eaf8a3c858d42ffcfeaa4" target="_blank">
               <img class="hover" src="../assets/contacto/iconos_rede/hover/icono_foursquare.svg">
               <img class="main" src="../assets/contacto/iconos_rede/azules/icono_foursquare.svg">
             </a>
@@ -387,7 +389,7 @@
   }
 
   .texture {
-    background-image: url('../assets/header/texture_header.png');
+    background-image: url('../assets/header/texture_header.svg');
     background-repeat: repeat-x;
     position: absolute;
     top: 0;
@@ -413,7 +415,7 @@
   .billing {
     position: absolute;
     top: 64px;
-    left: 20px;
+    left: 0px;
     transform: rotate(270deg);
     font-size: 14px;
   }
@@ -601,7 +603,7 @@
     right: 0;
     width: 168px;
     height: 264px;
-    background-image: url('../assets/sello/sello_coronela.png');
+    background-image: url('../assets/sello/sello_coronela.svg');
     z-index: 200;
     background-size: cover;
   }
@@ -705,7 +707,7 @@
   }
 
   .events p {
-    width: 499px;
+    max-width: 499px;
     margin: 0 auto;
     font-size: 15px;
     font-family: 'Brandon';
@@ -830,15 +832,20 @@
 
   @media screen and (max-width:572px) {
     .reservations {
-      padding-top: 368px;
+      padding-top: 400px;
     }
 
     .reservations .button {
-      margin-top: 340px;
+      margin-top: 390px;
     }
 
     .reservations .or_call_us {
-      margin-top: 286px;
+      margin-top: 336px;
+    }
+
+    ul.navbar li {
+      width: calc(40vw - 40px);
+      display: inline-block;
     }
   }
 
