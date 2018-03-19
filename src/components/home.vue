@@ -72,8 +72,8 @@
       Coronela es un restaurante de exquisita comida mexicana que se inspira en los platillos típicos del centro del país.
       <br><br>Ubicada en la histórica colonia Tabacalera de la Ciudad de México, la terraza de Coronela tiene una vista privilegiada a la Plaza de la República y al Monumento a la Revolución.
       <br><br>Nuestro equipo crea menús que exploran los sabores y tradiciones mexicanas echando mano de ingredientes en temporada.
-      <br><br>Lunes a viernes de 8 a.m. a 17 p.m. <br>
-              Sábado de 9 a.m. a 13 p.m.
+      <br><br>Lunes a miércoles de 9 a.m. a 5 p.m.  <br>
+              Jueves a sábado de 9 a.m. a 10 p.m.
     </div>
 
     <div v-if="this.language === 'english'" class="carousel-text">
@@ -83,8 +83,8 @@
       <br><br>
       Our team designs menus that explore Mexican flavors and traditions using seasonal ingredients.
       <br><br>
-      Monday to Friday from 8 a.m. to 5 p.m.<br>
-      Saturday 9 a.m. to 1 p.m.
+      Monday to Wednesday from 9 a.m. to 5 p.m.<br>
+      Thursday to Saturday 9 a.m. to 10 p.m.
     </div>
 
     <div class="watermark"></div>
@@ -113,11 +113,11 @@
         <div class="row menus" v-if="this.language === 'spanish'">
           <div class="col col-md-4">
             <h2>DESAYUNOS</h2>
-            <p> - <br>Complementa tu desayuno con un amplio menú de bollería y mermeladas artesanales. </p>
+            <p> - <br>Los clásicos de la cocina tradicional mexicana desde nuestra perspectiva, disfruta de nuestras salsas de la casa y algunas especialidades. </p>
           </div>
           <div class="col col-md-4">
             <h2>COMIDAS Y CENAS</h2>
-            <p> - <br> El menú respeta la cocina tradicional pero introduce la audacia de lo contemporáneo y elementos de modernidad culinaria. </p>
+            <p> - <br> Arraigados en la tradición y la cultura gastronómica mexicana, nuestra propuesta de alimentos y bebidas siempre se encuentra evolucionando. </p>
           </div>
           <div class="col col-md-4">
             <h2>ESPECIAL DE LA SEMANA</h2>
@@ -128,11 +128,11 @@
        <div class="row menus" v-if="this.language === 'english'">
          <div class="col col-md-4">
             <h2>BREAKFASTS</h2>
-            <p> - <br> Complement your breakfast with an extensive menu of homemade bread and jams. </p>
+            <p> - <br> The Mexican classics from our perspective: enjoy our house sauces and some specialties. </p>
           </div>
           <div class="col col-md-4">
             <h2>LUNCH AND DINNER</h2>
-            <p> - <br> The menu respects the traditional cuisine, while also introducing the audacity of contemporary elements. </p>
+            <p> - <br> Rooted in Mexican tradition and culture, our culinary proposal is always evolving. </p>
           </div>
           <div class="col col-md-4">
             <h2>WEEKLY SPECIALS</h2>
@@ -793,9 +793,10 @@
 
   @media screen and (max-width:768px) {
     .carousel-text {
-      top: 832px;
+      position: relative;
+      top: 20px;
       width: calc(100% - 64px);
-      right: 32px;
+      left: 32px;
       text-align: center;
       color: #000;
       font-family: 'Brandon-Light-Italic';
@@ -803,15 +804,15 @@
     }
 
     .reservations {
-      padding-top: 292px;
+      padding-top: 64px;
     }
 
     .reservations .button {
-      margin-top: 290px;
+      margin-top: 56px;
     }
 
     .reservations .or_call_us {
-      margin-top: 236px;
+      margin-top: 0;
     }
 
     .lang {
@@ -831,18 +832,6 @@
   }
 
   @media screen and (max-width:572px) {
-    .reservations {
-      padding-top: 400px;
-    }
-
-    .reservations .button {
-      margin-top: 390px;
-    }
-
-    .reservations .or_call_us {
-      margin-top: 336px;
-    }
-
     ul.navbar li {
       width: calc(40vw - 40px);
       display: inline-block;
